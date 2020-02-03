@@ -6,43 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello Bulma!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body>
-    <div class="columns is-vcentered">
-        <div class="column">
+    <div class="container">
+        <div class="box has-text-centered">
+
             <form action="welcome.php" method="post">
-                Title: <input type="text" name="title"><br>
-                Description: <input type="text" name="description"><br>
-                Choose Genre: <select name="genre" form="genre">
-                    <option value="abstract">Abstract</option>
-                    <option value="baroque">Baroque</option>
-                    <option value="gothic">Gothic</option>
-                    <option value="renaissance">Renaissance</option>
-                </select><br>
-                Choose Subject: <select name="subject" form="subject">
-                    <option value="landscape">Landscape</option>
-                    <option value="portrait">Portrait</option>
-                </select><br>
-                Year: <input type="date" name="year"><br>
-                Museum: <input type="text" name="museum"><br>
 
-                <!-- <p class="bd-notification is-primary">Second column with more content. This is so you can see the vertical alignment.</p> -->
-        </div>
-        <div class="column is-8">
-            <input type="radio" name="painting" value="paintings">Paintings
-            <input type="radio" name="painting" value="sculpture">Sculpture<br>
+                <div class="columns is-vcentered">
+                    <div class="column is-5 left">
+                        <!-- Title input -->
+                        <div class="field">
+                            <label class="label">Title</label>
+                            <div class="control">
+                                <input class="input" name="title" type="text">
+                            </div>
+                        </div>
+                        <!-- Description input -->
+                        <div class="field">
+                            <label class="label">Description</label>
+                            <div class="control">
+                                <input class="input" name="description" type="text">
+                            </div>
+                        </div>
+                        <!-- Genre Selection -->
+                        <div class="field">
+                            <label class="label">Choose Genre</label>   
+                            <div class="select is-fullwidth">
+                                <select name="genre" form="genre">
+                                    <option value="abstract">Abstract</option>
+                                    <option value="baroque">Baroque</option>
+                                    <option value="gothic">Gothic</option>
+                                    <option value="renaissance">Renaissance</option>
+                                </select>                           
+                             </div>
+                        </div>
+                        <!-- Subject Selection -->
+                        <div class="field">
+                            <label class="label">Choose Subject</label>   
+                            <div class="select is-fullwidth">
+                                <select name="genre" form="genre">
+                                    <option value="abstract">Abstract</option>
+                                    <option value="baroque">Baroque</option>
+                                    <option value="gothic">Gothic</option>
+                                    <option value="renaissance">Renaissance</option>
+                                </select>                           
+                             </div>
+                        </div>
+                        Choose Subject: <select name="subject" form="subject">
+                            <option value="landscape">Landscape</option>
+                            <option value="portrait">Portrait</option>
+                        </select><br>
+                        Year: <input type="date" name="year"><br>
+                        Museum: <input type="text" name="museum"><br>
 
-            <input type="checkbox" name="commercial" value="commercial">Commercial<br>
-            <input type="checkbox" name="noncommercial" value="noncommercial"> Non-Commercial<br>
-            <input type="checkbox" name="derivative" value="derivative" checked>Derivative<br>
-            <input type="checkbox" name="nonderivative" value="nonderivative" checked>Non-Derivative<br>
+                        <!-- <p class="bd-notification is-primary">Second column with more content. This is so you can see the vertical alignment.</p> -->
+                    </div>
+                    <div class="column left">
+                        <input type="radio" name="painting" value="paintings">Paintings
+                        <input type="radio" name="painting" value="sculpture">Sculpture<br>
 
-            <input style="position: absolute; right: 0; bottom: 0;" type="submit">
+                        <input type="checkbox" name="commercial" value="commercial">Commercial<br>
+                        <input type="checkbox" name="noncommercial" value="noncommercial"> Non-Commercial<br>
+                        <input type="checkbox" name="derivative" value="derivative" checked>Derivative<br>
+                        <input type="checkbox" name="nonderivative" value="nonderivative" checked>Non-Derivative<br>
+
+                    </div>
+                    <div class="column"></div>
+                </div>
+
+                <button class="button is-success" type="submit">
+                    Submit
+                </button>
             </form>
         </div>
-
     </div>
 </body>
 
