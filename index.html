@@ -4,80 +4,140 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <meta name="google" content="notranslate" />
+  <meta http-equiv="Content-Language" content="en_US" /> 
+    <title>Edit Art Work</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-</head>
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+</head>
+<script>
+     function clearSelects() {
+         console.log("Clear");
+         
+        $('form[name="editForm"]')
+            .find('select').val('')
+
+        return false;
+
+        }
+</script>
 <body>
+    
     <div class="container">
+        <h1 class="title m-t10">Edit Art Work</h1>
         <div class="box has-text-centered">
 
-            <form action="welcome.php" method="post">
+            <form name="editForm" action="welcome.php" method="post">
 
-                <div class="columns is-vcentered">
+                <div class="columns">
+                    <!-- Left Column -->
                     <div class="column is-5 left">
                         <!-- Title input -->
                         <div class="field">
-                            <label class="label">Title</label>
+                            <label class="label">Title:</label>
                             <div class="control">
                                 <input class="input" name="title" type="text">
                             </div>
                         </div>
                         <!-- Description input -->
                         <div class="field">
-                            <label class="label">Description</label>
+                            <label class="label">Description:</label>
                             <div class="control">
                                 <input class="input" name="description" type="text">
                             </div>
                         </div>
                         <!-- Genre Selection -->
                         <div class="field">
-                            <label class="label">Choose Genre</label>   
+                            <label class="label">Choose Genre:</label>
                             <div class="select is-fullwidth">
                                 <select name="genre" form="genre">
+                                    <option value="" disabled selected hidden></option>
                                     <option value="abstract">Abstract</option>
                                     <option value="baroque">Baroque</option>
                                     <option value="gothic">Gothic</option>
                                     <option value="renaissance">Renaissance</option>
-                                </select>                           
-                             </div>
+                                </select>
+                            </div>
                         </div>
                         <!-- Subject Selection -->
                         <div class="field">
-                            <label class="label">Choose Subject</label>   
+                            <label class="label">Choose Subject:</label>
                             <div class="select is-fullwidth">
-                                <select name="genre" form="genre">
-                                    <option value="abstract">Abstract</option>
-                                    <option value="baroque">Baroque</option>
-                                    <option value="gothic">Gothic</option>
-                                    <option value="renaissance">Renaissance</option>
-                                </select>                           
-                             </div>
+                                <select name="subject" form="subject">
+                                    <option value="" disabled selected hidden></option>
+                                    <option value="landscape">Landscape</option>
+                                    <option value="portrait">Portrait</option>
+                                </select>
+                            </div>
                         </div>
-                        Choose Subject: <select name="subject" form="subject">
-                            <option value="landscape">Landscape</option>
-                            <option value="portrait">Portrait</option>
-                        </select><br>
-                        Year: <input type="date" name="year"><br>
-                        Museum: <input type="text" name="museum"><br>
-
-                        <!-- <p class="bd-notification is-primary">Second column with more content. This is so you can see the vertical alignment.</p> -->
+                        <!-- Year date input -->
+                        <div class="field">
+                            <label class="label">Year:</label>
+                            <div class="control">
+                                <input class="input" name="year" type="number">
+                            </div>
+                        </div>
+                        <!-- Musuem input -->
+                        <div class="field">
+                            <label class="label">Musuem: </label>
+                            <div class="control">
+                                <input class="input" name="museum" type="text">
+                            </div>
+                        </div>
                     </div>
+                    <!-- Centered column -->
                     <div class="column left">
-                        <input type="radio" name="painting" value="paintings">Paintings
-                        <input type="radio" name="painting" value="sculpture">Sculpture<br>
-
-                        <input type="checkbox" name="commercial" value="commercial">Commercial<br>
-                        <input type="checkbox" name="noncommercial" value="noncommercial"> Non-Commercial<br>
-                        <input type="checkbox" name="derivative" value="derivative" checked>Derivative<br>
-                        <input type="checkbox" name="nonderivative" value="nonderivative" checked>Non-Derivative<br>
-
+                        <!-- Type Radio -->
+                        <div class="field">
+                            <label class="label">Type:</label>
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio" name="type">
+                                    Painting
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="type">
+                                    Sculpture
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Creative Commons Specification Checkboxes -->
+                        <div class="field">
+                            <label class="label">Creative Commons Specification:</label>
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="commercial" value="commercial">
+                                    Commercial
+                                </label>
+                            </div>
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="noncommercial" value="noncommercial">
+                                    Non-Commercial
+                                </label>
+                            </div>
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="derivative" value="derivative">
+                                    Derivative Work
+                                </label>
+                            </div>
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="nonderivative" value="nonderivative">
+                                    Non-Derivative Work
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <div class="column"></div>
                 </div>
-
+                <button class="button is-dark" type="reset" onClick="clearSelects()">
+                    Clear
+                </button>
                 <button class="button is-success" type="submit">
                     Submit
                 </button>
