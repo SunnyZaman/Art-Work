@@ -30,7 +30,7 @@
         <h1 class="title m-t10">Edit Art Work</h1>
         <div class="box has-text-centered">
 
-            <form name="editForm" action="welcome.php" method="post">
+            <form name="editForm" action="submitEdit.php" method="POST">
 
                 <div class="columns">
                     <!-- Left Column -->
@@ -39,21 +39,21 @@
                         <div class="field">
                             <label class="label">Title:</label>
                             <div class="control">
-                                <input class="input" name="title" type="text">
+                                <input class="input" name="art[title]" type="text">
                             </div>
                         </div>
                         <!-- Description input -->
                         <div class="field">
                             <label class="label">Description:</label>
                             <div class="control">
-                                <input class="input" name="description" type="text">
+                                <input class="input" name="art[description]" type="text">
                             </div>
                         </div>
                         <!-- Genre Selection -->
                         <div class="field">
                             <label class="label">Choose Genre:</label>
                             <div class="select is-fullwidth">
-                                <select name="genre" form="genre">
+                                <select name="art[genre]">
                                     <option value="" disabled selected hidden></option>
                                     <option value="abstract">Abstract</option>
                                     <option value="baroque">Baroque</option>
@@ -66,7 +66,7 @@
                         <div class="field">
                             <label class="label">Choose Subject:</label>
                             <div class="select is-fullwidth">
-                                <select name="subject" form="subject">
+                                <select name="art[subject]">
                                     <option value="" disabled selected hidden></option>
                                     <option value="landscape">Landscape</option>
                                     <option value="portrait">Portrait</option>
@@ -77,14 +77,14 @@
                         <div class="field">
                             <label class="label">Year:</label>
                             <div class="control">
-                                <input class="input" name="year" type="number">
+                                <input class="input" name="art[year]" type="number">
                             </div>
                         </div>
                         <!-- Musuem input -->
                         <div class="field">
                             <label class="label">Musuem: </label>
                             <div class="control">
-                                <input class="input" name="museum" type="text">
+                                <input class="input" name="art[museum]" type="text">
                             </div>
                         </div>
                     </div>
@@ -95,11 +95,11 @@
                             <label class="label">Type:</label>
                             <div class="control">
                                 <label class="radio">
-                                    <input type="radio" name="type">
+                                    <input type="radio" name="art[type]">
                                     Painting
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="type">
+                                    <input type="radio" name="art[type]">
                                     Sculpture
                                 </label>
                             </div>
@@ -109,25 +109,25 @@
                             <label class="label">Creative Commons Specification:</label>
                             <div class="control">
                                 <label class="checkbox">
-                                    <input type="checkbox" name="commercial" value="commercial">
+                                    <input type="checkbox" name="art[commercial]" value="commercial">
                                     Commercial
                                 </label>
                             </div>
                             <div class="control">
                                 <label class="checkbox">
-                                    <input type="checkbox" name="noncommercial" value="noncommercial">
+                                    <input type="checkbox" name="art[noncommercial]" value="noncommercial">
                                     Non-Commercial
                                 </label>
                             </div>
                             <div class="control">
                                 <label class="checkbox">
-                                    <input type="checkbox" name="derivative" value="derivative">
+                                    <input type="checkbox" name="art[derivative]" value="derivative">
                                     Derivative Work
                                 </label>
                             </div>
                             <div class="control">
                                 <label class="checkbox">
-                                    <input type="checkbox" name="nonderivative" value="nonderivative">
+                                    <input type="checkbox" name="art[nonderivative]" value="nonderivative">
                                     Non-Derivative Work
                                 </label>
                             </div>
